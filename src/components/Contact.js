@@ -38,7 +38,7 @@ const Contact = () => {
     }
     
     // Phone validation (optional but if provided, should be valid)
-    if (formData.phoneNumber && !/^[\+]?[1-9][\d]{0,15}$/.test(formData.phoneNumber.replace(/\s/g, ''))) {
+    if (formData.phoneNumber && !/^[+]?[1-9][\d]{0,15}$/.test(formData.phoneNumber.replace(/\s/g, ''))) {
       newErrors.phoneNumber = 'Please enter a valid phone number';
     }
     
