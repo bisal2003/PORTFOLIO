@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorBoundary from './components/ErrorBoundary';
 import Header from './components/Header';
 import Home from './components/Home';
 import Education from './components/Education';
@@ -12,17 +13,19 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Home />
-      <Education />
-      <Experience />
-      <Services />
-      <Testimonials />
-      <Achievements />
-      <Contact />
-      <Footer />
-    </div>
+    <ErrorBoundary>
+      <div className="App">
+        <Header />
+        <Home />
+        <Education />
+        <Experience />
+        <Services />
+        <Testimonials />
+        <Achievements />
+        <Contact />
+        <Footer />
+      </div>
+    </ErrorBoundary>
   );
 }
 

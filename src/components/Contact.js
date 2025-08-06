@@ -316,8 +316,7 @@ const Contact = () => {
         </div>
         
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="space-y-6" netlify="true" name="contact">
-          <input type="hidden" name="form-name" value="contact" />
+        <div className="space-y-6">
           <h3 className="text-4xl font-bold text-white mb-8">Send Message</h3>
           
           {/* Success Message */}
@@ -340,126 +339,128 @@ const Contact = () => {
             </div>
           )}
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <input
-                type="text"
-                name="fullName"
-                placeholder="Full Name *"
-                value={formData.fullName}
-                onChange={handleChange}
-                className={`w-full p-4 text-xl text-white bg-bg-secondary rounded-xl border-2 ${
-                  errors.fullName ? 'border-red-500' : 'border-accent/30'
-                } focus:outline-none focus:border-accent transition-colors duration-300`}
-                required
-              />
-              {errors.fullName && (
-                <p className="text-red-400 text-sm mt-1">{errors.fullName}</p>
-              )}
-            </div>
-            <div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address *"
-                value={formData.email}
-                onChange={handleChange}
-                className={`w-full p-4 text-xl text-white bg-bg-secondary rounded-xl border-2 ${
-                  errors.email ? 'border-red-500' : 'border-accent/30'
-                } focus:outline-none focus:border-accent transition-colors duration-300`}
-                required
-              />
-              {errors.email && (
-                <p className="text-red-400 text-sm mt-1">{errors.email}</p>
-              )}
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <input
-                type="tel"
-                name="phoneNumber"
-                placeholder="Ph. Number(Optional)"
-                value={formData.phoneNumber}
-                onChange={handleChange}
-                className={`w-full p-4 text-xl text-white bg-bg-secondary rounded-xl border-2 ${
-                  errors.phoneNumber ? 'border-red-500' : 'border-accent/30'
-                } focus:outline-none focus:border-accent transition-colors duration-300`}
-              />
-              {errors.phoneNumber && (
-                <p className="text-red-400 text-sm mt-1">{errors.phoneNumber}</p>
-              )}
-            </div>
-            <div>
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject *"
-                value={formData.subject}
-                onChange={handleChange}
-                className={`w-full p-4 text-xl text-white bg-bg-secondary rounded-xl border-2 ${
-                  errors.subject ? 'border-red-500' : 'border-accent/30'
-                } focus:outline-none focus:border-accent transition-colors duration-300`}
-                required
-              />
-              {errors.subject && (
-                <p className="text-red-400 text-sm mt-1">{errors.subject}</p>
-              )}
-            </div>
-          </div>
-          
-          <div>
-            <textarea
-              name="message"
-              placeholder="Your Message (minimum 10 characters) *"
-              value={formData.message}
-              onChange={handleChange}
-              rows="6"
-              className={`w-full p-4 text-xl text-white bg-bg-secondary rounded-xl border-2 ${
-                errors.message ? 'border-red-500' : 'border-accent/30'
-              } resize-none focus:outline-none focus:border-accent transition-colors duration-300`}
-              required
-            ></textarea>
-            {errors.message && (
-              <p className="text-red-400 text-sm mt-1">{errors.message}</p>
-            )}
-          </div>
-          
-          <button
-            type="submit"
-            disabled={formStatus.isSubmitting}
-            className={`w-full py-4 px-8 text-xl font-bold rounded-xl transition-all duration-300 ${
-              formStatus.isSubmitting
-                ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                : 'bg-accent text-black shadow-[0_0_25px_#00ffee] hover:bg-white hover:scale-105 hover:shadow-[0_0_50px_#00ffee]'
-            }`}
-          >
-            {formStatus.isSubmitting ? (
-              <div className="flex items-center justify-center gap-3">
-                <FaSpinner className="animate-spin" />
-                Sending...
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <input
+                  type="text"
+                  name="fullName"
+                  placeholder="Full Name *"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  className={`w-full p-4 text-xl text-white bg-bg-secondary rounded-xl border-2 ${
+                    errors.fullName ? 'border-red-500' : 'border-accent/30'
+                  } focus:outline-none focus:border-accent transition-colors duration-300`}
+                  required
+                />
+                {errors.fullName && (
+                  <p className="text-red-400 text-sm mt-1">{errors.fullName}</p>
+                )}
               </div>
-            ) : (
-              'Send Message'
-            )}
-          </button>
-          
-          <div className="text-center">
-            <p className="text-gray-400 text-sm">
-              * Required fields | Your privacy is protected
-            </p>
-            <p className="text-gray-500 text-xs mt-2">
-              Alternative: Email directly at{' '}
-              <a 
-                href="mailto:bisal.career@gmail.com" 
-                className="text-accent hover:underline"
-              >
-                bisal.career@gmail.com
-              </a>
-            </p>
-          </div>
-        </form>
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address *"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={`w-full p-4 text-xl text-white bg-bg-secondary rounded-xl border-2 ${
+                    errors.email ? 'border-red-500' : 'border-accent/30'
+                  } focus:outline-none focus:border-accent transition-colors duration-300`}
+                  required
+                />
+                {errors.email && (
+                  <p className="text-red-400 text-sm mt-1">{errors.email}</p>
+                )}
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <input
+                  type="tel"
+                  name="phoneNumber"
+                  placeholder="Ph. Number(Optional)"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  className={`w-full p-4 text-xl text-white bg-bg-secondary rounded-xl border-2 ${
+                    errors.phoneNumber ? 'border-red-500' : 'border-accent/30'
+                  } focus:outline-none focus:border-accent transition-colors duration-300`}
+                />
+                {errors.phoneNumber && (
+                  <p className="text-red-400 text-sm mt-1">{errors.phoneNumber}</p>
+                )}
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject *"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className={`w-full p-4 text-xl text-white bg-bg-secondary rounded-xl border-2 ${
+                    errors.subject ? 'border-red-500' : 'border-accent/30'
+                  } focus:outline-none focus:border-accent transition-colors duration-300`}
+                  required
+                />
+                {errors.subject && (
+                  <p className="text-red-400 text-sm mt-1">{errors.subject}</p>
+                )}
+              </div>
+            </div>
+            
+            <div>
+              <textarea
+                name="message"
+                placeholder="Your Message (minimum 10 characters) *"
+                value={formData.message}
+                onChange={handleChange}
+                rows="6"
+                className={`w-full p-4 text-xl text-white bg-bg-secondary rounded-xl border-2 ${
+                  errors.message ? 'border-red-500' : 'border-accent/30'
+                } resize-none focus:outline-none focus:border-accent transition-colors duration-300`}
+                required
+              ></textarea>
+              {errors.message && (
+                <p className="text-red-400 text-sm mt-1">{errors.message}</p>
+              )}
+            </div>
+            
+            <button
+              type="submit"
+              disabled={formStatus.isSubmitting}
+              className={`w-full py-4 px-8 text-xl font-bold rounded-xl transition-all duration-300 ${
+                formStatus.isSubmitting
+                  ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                  : 'bg-accent text-black shadow-[0_0_25px_#00ffee] hover:bg-white hover:scale-105 hover:shadow-[0_0_50px_#00ffee]'
+              }`}
+            >
+              {formStatus.isSubmitting ? (
+                <div className="flex items-center justify-center gap-3">
+                  <FaSpinner className="animate-spin" />
+                  Sending...
+                </div>
+              ) : (
+                'Send Message'
+              )}
+            </button>
+            
+            <div className="text-center">
+              <p className="text-gray-400 text-sm">
+                * Required fields | Your privacy is protected
+              </p>
+              <p className="text-gray-500 text-xs mt-2">
+                Alternative: Email directly at{' '}
+                <a 
+                  href="mailto:bisal.career@gmail.com" 
+                  className="text-accent hover:underline"
+                >
+                  bisal.career@gmail.com
+                </a>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   );
