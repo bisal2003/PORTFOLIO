@@ -74,6 +74,44 @@ const Contact = () => {
     }
   };
 
+  const submitToWeb3Forms = async (data) => {
+    const formData = new FormData();
+    
+    // Add Web3Forms access key
+    formData.append("access_key", process.env.REACT_APP_WEB3FORMS_ACCESS_KEY);
+    
+    // Add form data
+    formData.append("name", data.fullName);
+    formData.append("email", data.email);
+    formData.append("phone", data.phoneNumber || "Not provided");
+    formData.append("subject", data.subject);
+    formData.append("message", data.message);
+    
+    // Add additional metadata
+    formData.append("from_name", "Portfolio Contact Form");
+    formData.append("to_name", "Bisal Prasad");
+    
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    });
+
+    const result = await response.json();
+    
+    if (!result.success) {
+      throw new Error(result.message || 'Failed to submit via Web3Forms');
+    }
+    
+    return result;
+  };
+
   const submitToVercel = async (data) => {
     const response = await fetch('/api/contact', {
       method: 'POST',
@@ -159,30 +197,43 @@ const Contact = () => {
       // Try multiple submission methods
       let submitted = false;
       
-      // Method 1: Try Vercel API (primary for Vercel deployment)
+      // Method 1: Try Web3Forms (primary - most reliable)
       try {
-        await submitToVercel(formData);
+        await submitToWeb3Forms(formData);
         submitted = true;
-      } catch (vercelError) {
-        console.log('Vercel API failed, trying Formspree...');
+        console.log('✅ Form submitted successfully via Web3Forms');
+      } catch (web3formsError) {
+        console.log('Web3Forms failed, trying Vercel API...', web3formsError.message);
         
-        // Method 2: Try Formspree (free tier)
+        // Method 2: Try Vercel API (secondary for Vercel deployment)
         try {
-          await submitToFormspree(formData);
+          await submitToVercel(formData);
           submitted = true;
-        } catch (formspreeError) {
-          console.log('Formspree failed, trying Netlify...');
+          console.log('✅ Form submitted successfully via Vercel API');
+        } catch (vercelError) {
+          console.log('Vercel API failed, trying Formspree...', vercelError.message);
           
-          // Method 3: Try Netlify Forms (if hosted on Netlify)
+          // Method 3: Try Formspree (tertiary backup)
           try {
-            await submitToNetlify(formData);
+            await submitToFormspree(formData);
             submitted = true;
-          } catch (netlifyError) {
-            console.log('Netlify failed, using mailto...');
+            console.log('✅ Form submitted successfully via Formspree');
+          } catch (formspreeError) {
+            console.log('Formspree failed, trying Netlify...', formspreeError.message);
             
-            // Method 4: Fallback to mailto
-            sendMailto(formData);
-            submitted = true;
+            // Method 4: Try Netlify Forms (if hosted on Netlify)
+            try {
+              await submitToNetlify(formData);
+              submitted = true;
+              console.log('✅ Form submitted successfully via Netlify');
+            } catch (netlifyError) {
+              console.log('Netlify failed, using mailto...', netlifyError.message);
+              
+              // Method 5: Fallback to mailto
+              sendMailto(formData);
+              submitted = true;
+              console.log('✅ Opened mailto as fallback');
+            }
           }
         }
       }
@@ -313,6 +364,14 @@ const Contact = () => {
               <li>• Machine Learning Applications</li>
             </ul>
           </div>
+          
+          <div className="bg-bg-secondary p-6 rounded-2xl border-2 border-green-500/30">
+            <h4 className="text-xl font-bold text-green-400 mb-4">🚀 Powered by Web3Forms</h4>
+            <p className="text-gray-300 text-sm">
+              This contact form uses Web3Forms for reliable email delivery. 
+              No backend required, secure, and spam-protected.
+            </p>
+          </div>
         </div>
         
         {/* Contact Form */}
@@ -323,9 +382,14 @@ const Contact = () => {
           {formStatus.submitted && (
             <div className="flex items-center gap-3 p-4 bg-green-500/20 border-2 border-green-500 rounded-xl">
               <FaCheckCircle className="text-green-500 text-2xl" />
-              <span className="text-green-400 font-semibold">
-                Message sent successfully! I'll get back to you soon.
-              </span>
+              <div>
+                <span className="text-green-400 font-semibold block">
+                  Message sent successfully! 🎉
+                </span>
+                <span className="text-green-300 text-sm">
+                  I'll get back to you within 24 hours.
+                </span>
+              </div>
             </div>
           )}
           
