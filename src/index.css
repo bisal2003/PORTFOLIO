@@ -1,13 +1,504 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  * {
+    @apply box-border;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+  
+  html {
+    font-size: 60%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    @apply bg-bg-primary text-text-primary font-poppins;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .text-animation {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 320px;
+  }
+  
+  .text-animation span {
+    position: relative;
+  }
+  
+  .text-animation span::before {
+    content: "AI/ML Engineer";
+    color: #00ffee;
+    animation: words 20s infinite;
+  }
+  
+  .text-animation span::after {
+    content: "";
+    background-color: #080808;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid #080808;
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+  }
+}
+
+@keyframes cursor {
+  to {
+    border-left: 2px solid #00ffee;
+  }
+}
+
+@keyframes words {
+  0%, 20% { content: "AI/ML Engineer"; }
+  30%, 10% { content: "BCI Researcher"; }
+  41%, 60% { content: "Full-Stack Developer"; }
+  61%, 80% { content: "Hackathon Winner"; }
+  81%, 100% { content: "ECE Student"; }
+  81%, 100% { content: "Coder"; }
+}
+
+@keyframes typing {
+  10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+    width: 0;
+  }
+  5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+    width: calc(100% + 80px);
+  }
+}
+
+/* Professional Media Queries for Responsive Design */
+
+/* Large Desktop (1440px and above) */
+@media (min-width: 1440px) {
+  html {
+    font-size: 65%;
+  }
+  
+  .text-animation {
+    font-size: 38px;
+    min-width: 360px;
+  }
+}
+
+/* Standard Desktop (1200px - 1439px) */
+@media (max-width: 1439px) and (min-width: 1200px) {
+  html {
+    font-size: 58%;
+  }
+  
+  section {
+    padding: 8rem 10% 8rem;
+  }
+}
+
+/* Small Desktop / Large Tablet (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  html {
+    font-size: 55%;
+  }
+  
+  section {
+    padding: 7rem 8% 7rem;
+  }
+  
+  .home {
+    gap: 8rem;
+  }
+  
+  .text-animation {
+    font-size: 30px;
+    min-width: 280px;
+  }
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  
+  section {
+    padding: 6rem 6% 6rem;
+  }
+  
+  .home {
+    flex-direction: column;
+    gap: 6rem;
+    text-align: center;
+  }
+  
+  .home-img img {
+    width: 40vw;
+  }
+  
+  .text-animation {
+    font-size: 28px;
+    min-width: 250px;
+  }
+  
+  /* Navigation adjustments for tablet */
+  .header {
+    padding: 3rem 8% 3rem;
+  }
+  
+  .navbar a {
+    font-size: 2rem;
+    margin-left: 2rem;
+  }
+  
+  /* Timeline adjustments */
+  .timeline-items::before {
+    left: 30px;
+  }
+  
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    padding-left: 70px;
+    text-align: left;
+  }
+  
+  .timeline-dot {
+    left: 22px;
+  }
+}
+
+/* Mobile Large (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  html {
+    font-size: 45%;
+  }
+  
+  section {
+    padding: 5rem 5% 5rem;
+  }
+  
+  .home {
+    flex-direction: column;
+    gap: 4rem;
+    text-align: center;
+  }
+  
+  .home-content h1 {
+    font-size: 5rem;
+  }
+  
+  .home-img img {
+    width: 60vw;
+  }
+  
+  .text-animation {
+    font-size: 24px;
+    min-width: 220px;
+  }
+  
+  /* Header mobile adjustments */
+  .header {
+    padding: 2rem 5% 2rem;
+  }
+  
+  .logo {
+    font-size: 2.5rem;
+  }
+  
+  #menu-icon {
+    display: block;
+  }
+  
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 0.1rem solid rgba(0, 255, 238, 0.2);
+  }
+  
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    color: white;
+  }
+  
+  /* Cards and components adjustments */
+  .services-container,
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .service-box {
+    height: auto;
+    min-height: 250px;
+  }
+  
+  .testimonial-item {
+    min-height: 450px;
+    margin: 0 1rem;
+    padding: 20px 40px;
+  }
+  
+  /* Contact form adjustments */
+  .contact form .input-box {
+    flex-direction: column;
+  }
+  
+  .contact form .input-box input {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+/* Mobile Small (320px - 575px) */
+@media (max-width: 575px) {
+  html {
+    font-size: 40%;
+  }
+  
+  section {
+    padding: 4rem 4% 4rem;
+  }
+  
+  .home {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .home-content h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+  }
+  
+  .home-img img {
+    width: 70vw;
+  }
+  
+  .text-animation {
+    font-size: 20px;
+    min-width: 200px;
+  }
+  
+  /* Header mobile small adjustments */
+  .header {
+    padding: 1.5rem 4% 1.5rem;
+  }
+  
+  .logo {
+    font-size: 2rem;
+  }
+  
+  .heading {
+    font-size: 4rem;
+  }
+  
+  /* Single column layout for mobile */
+  .services-container,
+  .wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-box {
+    height: auto;
+    min-height: 200px;
+    padding: 1.5rem;
+  }
+  
+  .testimonial-item {
+    min-height: 400px;
+    margin: 0 0.5rem;
+    padding: 15px 30px;
+  }
+  
+  /* Social icons adjustments */
+  .social-icons a {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 2rem;
+    margin: 2rem 1rem 2rem 0;
+  }
+  
+  /* Button adjustments */
+  .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.4rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  /* Footer adjustments */
+  .footer ul li {
+    display: block;
+    padding: 0.5rem 0;
+  }
+  
+  .footer .social a {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 20px;
+    margin: 0 5px;
+  }
+}
+
+/* Ultra-wide screens (1920px and above) */
+@media (min-width: 1920px) {
+  html {
+    font-size: 70%;
+  }
+  
+  .text-animation {
+    font-size: 42px;
+    min-width: 400px;
+  }
+  
+  section {
+    padding: 12rem 15% 12rem;
+  }
+}
+
+/* Landscape mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .home {
+    min-height: auto;
+    padding: 2rem 5%;
+  }
+  
+  .home-content h1 {
+    font-size: 3rem;
+  }
+  
+  .text-animation {
+    font-size: 18px;
+  }
+  
+  .home-img img {
+    width: 25vw;
+  }
+  
+  section {
+    padding: 3rem 5% 3rem;
+  }
+}
+
+/* Print styles for professional documents */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .header,
+  .footer,
+  .social-icons,
+  .btn-group {
+    display: none;
+  }
+  
+  section {
+    page-break-inside: avoid;
+    padding: 1rem;
+  }
+  
+  .heading {
+    color: #333 !important;
+    font-size: 2rem;
+  }
+}
+
+/* Contact Form Enhancements */
+@layer components {
+  .form-floating-label {
+    position: relative;
+  }
+  
+  .form-floating-label input:focus + label,
+  .form-floating-label input:not(:placeholder-shown) + label {
+    transform: translateY(-25px) scale(0.8);
+    color: #00ffee;
+  }
+  
+  .form-floating-label label {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    color: #9ca3af;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background: #131313;
+    padding: 0 8px;
+  }
+  
+  .contact-form-animation {
+    animation: slideInUp 0.6s ease-out;
+  }
+  
+  .success-message {
+    animation: fadeInScale 0.5s ease-out;
+  }
+  
+  .error-shake {
+    animation: shake 0.6s ease-in-out;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Improved form focus states */
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(0, 255, 238, 0.1);
+  border-color: #00ffee;
+}
+
+.form-input:invalid {
+  border-color: #ef4444;
+}
+
+.form-input:valid {
+  border-color: #10b981;
 }

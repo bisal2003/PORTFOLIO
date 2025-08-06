@@ -1,38 +1,78 @@
+/* Custom styles for the portfolio */
 .App {
-  text-align: center;
+  text-align: left;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00ffee;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #080808;
+  width: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .home {
+    flex-direction: column;
+    gap: 8rem;
+    text-align: center;
+  }
+  
+  .home-img img {
+    width: 50vw;
+  }
+  
+  .timeline-items::before {
+    left: 30px;
+  }
+  
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    padding-left: 60px;
+    text-align: left;
+  }
+  
+  .timeline-dot {
+    left: 22px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .home {
+    gap: 4rem;
+  }
+  
+  .heading {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 45%;
+  }
+  
+  .home-content h1 {
+    font-size: 5rem;
+  }
+  
+  .heading {
+    font-size: 4rem;
   }
 }
