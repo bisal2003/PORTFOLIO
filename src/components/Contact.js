@@ -74,6 +74,27 @@ const Contact = () => {
     }
   };
 
+  const submitToVercel = async (data) => {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: data.fullName,
+        email: data.email,
+        phone: data.phoneNumber,
+        subject: data.subject,
+        message: data.message,
+      }),
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to submit via Vercel');
+    }
+    return response;
+  };
+
   const submitToFormspree = async (data) => {
     const response = await fetch('https://formspree.io/f/xeoqkqpr', {
       method: 'POST',
@@ -138,23 +159,31 @@ const Contact = () => {
       // Try multiple submission methods
       let submitted = false;
       
-      // Method 1: Try Formspree (free tier)
+      // Method 1: Try Vercel API (primary for Vercel deployment)
       try {
-        await submitToFormspree(formData);
+        await submitToVercel(formData);
         submitted = true;
-      } catch (formspreeError) {
-        console.log('Formspree failed, trying Netlify...');
+      } catch (vercelError) {
+        console.log('Vercel API failed, trying Formspree...');
         
-        // Method 2: Try Netlify Forms (if hosted on Netlify)
+        // Method 2: Try Formspree (free tier)
         try {
-          await submitToNetlify(formData);
+          await submitToFormspree(formData);
           submitted = true;
-        } catch (netlifyError) {
-          console.log('Netlify failed, using mailto...');
+        } catch (formspreeError) {
+          console.log('Formspree failed, trying Netlify...');
           
-          // Method 3: Fallback to mailto
-          sendMailto(formData);
-          submitted = true;
+          // Method 3: Try Netlify Forms (if hosted on Netlify)
+          try {
+            await submitToNetlify(formData);
+            submitted = true;
+          } catch (netlifyError) {
+            console.log('Netlify failed, using mailto...');
+            
+            // Method 4: Fallback to mailto
+            sendMailto(formData);
+            submitted = true;
+          }
         }
       }
 
