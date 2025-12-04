@@ -1,0 +1,220 @@
+%------------------------
+% Resume in Latex
+% Author : Bisal Prasad
+% Based on Bisal Prasad's Template
+%------------------------
+
+\documentclass[A4paper,5pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% ---------- Custom Single-Argument Bullet Point ----------
+\renewcommand{\resumeItem}[1]{%
+  \item\small{#1 \vspace{-2pt}}%
+}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItemWithTitle}[2]{
+  \item\small{
+    \textbf{#1}: #2 \vspace{-2pt}
+  }
+}
+
+% ✅ Fixed: only prints 2nd row if args 3/4 are non-empty
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \if\relax\detokenize{#3}\relax
+      \else
+        \textit{#3} & \textit{#4} \\
+      \fi
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItemWithTitle{#1}{#2}\vspace{-3pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% Link shortcut with blue color
+\newcommand{\linkblue}[2]{\href{#1}{\textcolor{blue}{#2}}}
+
+%-----------------------------
+%%%%%%  CV STARTS HERE  %%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE Bisal Prasad}} & Email: \linkblue{mailto:aakashdeep0551@gmail.com}{aakashdeep0551@gmail.com} \\
+  LinkedIn:\linkblue{https://www.linkedin.com/in/aakashdeep0551}{ linkedin.com/in/aakashdeep0551} & Mobile: +91 (Add Number) \\
+  Github: \linkblue{https://github.com/Aakashdeep-Srivastava}{github.com/Aakashdeep-Srivastava} & Portfolio: \linkblue{https://aakashdeep-srivastava.github.io/skydeep/}{aakashdeep-srivastava.github.io} \\
+\end{tabular*}
+\vspace{-5pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Indian Institute of Technology, Madras}{2021 -- Present}
+      {BS in Data Science and Applications}{}
+    \resumeSubheading
+      {Institute of Technology, Guru Ghasidas Vishwavidyalaya}{2020 -- 2024}
+      {Bachelor of Technology in Mechanical Engineering}{}
+  \resumeSubHeadingListEnd
+\vspace{-5pt}
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+  \resumeSubHeadingListStart
+    \resumeItemWithTitle{\textbf{Languages}}{Python, C++, JavaScript, TypeScript, SQL}
+    \resumeItemWithTitle{\textbf{Machine Learning \& AI}}{TensorFlow, PyTorch, MLOps, AWS SageMaker, PEFT, LLMs (Llama, Qwen), RAG, Computer Vision, NLP, Generative AI}
+    \resumeItemWithTitle{\textbf{Web Development}}{React.js, Next.js, Node.js, Express.js, Flask, Streamlit, REST APIs}
+    \resumeItemWithTitle{\textbf{Databases \& Cloud}}{MongoDB, MySQL, AWS (S3, SageMaker), Google Cloud (Vertex AI, Gemini), PocketBase}
+    \resumeItemWithTitle{\textbf{Tools}}{Git, Docker, MLflow, DAGsHub, Airtable, Figma, PowerBI}
+  \resumeSubHeadingListEnd
+\vspace{-5pt}
+
+%-----------EXPERIENCE-----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {EduGorilla}{Aug 2024 -- Present}
+      {AI Engineer}{Remote/Hybrid}
+      \resumeItemListStart
+        \resumeItem{Fine-tuned \textbf{Qwen-3B (2.5B parameters)} using \textbf{Amazon SageMaker} for K-8 educational content, implementing \textbf{PEFT} over 3-6 epochs for optimized resource utilization.}
+        \resumeItem{Leveraged \textbf{MLflow LLM Evaluate} for model performance tracking, integrating with \textbf{DAGsHub} for collaborative experiment management.}
+        \resumeItem{Developed automated text-to-video pipeline using \textbf{Gemini Pro}, \textbf{Unsplash API}, \textbf{ElevenLabs} for voice cloning, and \textbf{Rhubarb Lip Sync}.}
+        \resumeItem{Implemented \textbf{SmartScraper AI} for government exam notifications, enhancing user engagement with timely updates.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Krsta}{Oct 2022 -- Jun 2023}
+      {Webflow Developer}{}
+      \resumeItemListStart
+        \resumeItem{Revamped website using \textbf{Figma} and \textbf{Webflow}, optimizing admin dashboard with \textbf{Airtable automations}, achieving a 15-30\% improvement in user experience.}
+        \resumeItem{Boosted process efficiency by 15-25\% through \textbf{Zaps} and \textbf{Stripe} integration, managing backend requests for 80+ users.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {HURL (Hindustan Urvarak \& Rasayan Limited)}{Jun 2022 -- Aug 2022}
+      {Summer Engineering Intern}{}
+      \resumeItemListStart
+        \resumeItem{Analyzed DM-Plant blueprint to identify 3 critical issues within the N-Pit area.}
+        \resumeItem{Evaluated maintenance shutdown data to identify discrepancies and anomalies in N-Pit operations.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Indian Railways}{Jun 2021 -- Jul 2021}
+      {Summer Engineering Intern}{}
+      \resumeItemListStart
+        \resumeItem{Analyzed air brake systems in LHB railway coaches, examining 20+ components for high-speed operations up to 160 km/h.}
+        \resumeItem{Documented technical specifications and maintenance procedures at Northern Eastern Railway.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+\vspace{-5pt}
+
+%-----------PROJECTS-----------
+\section{Key Projects \& Hackathons}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {EduMate – Inclusive Learning Platform \linkblue{https://github.com/Aakashdeep-Srivastava/edumate1.1}{[GitHub]}}{}
+      {React3Fiber, Next.js, Node.js, WebRTC, PocketBase}{}
+      \resumeItemListStart
+        \resumeItem{Architected a \textbf{3D learning environment} with avatars and real-time \textbf{sign language recognition} (95\% accuracy).}
+        \resumeItem{Built speech-to-image generation and canvas-based sketching, enabling dynamic voice-to-drawing features.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {ReachifyMe Go-To-Market Strategy (Winner - Product Space GenAI Hackathon) \linkblue{https://drive.google.com/file/d/1Sfnlhc80Fi1jH4P0I6wBTrbXdB41NpC8/view}{[Link]}}{}
+      {Market Research, Strategy, Growth Hacking}{}
+      \resumeItemListStart
+        \resumeItem{Led US market expansion strategy, creating multi-channel acquisition plan targeting 100+ paid users.}
+        \resumeItem{Reduced customer acquisition costs from \$200 to \$50 through strategic mix of Reddit, podcasts and referral programs.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Police Resource Management (1st Runner-up - Karnataka State Police Datathon) \linkblue{https://github.com/Aakashdeep-Srivastava/PRM_Karnataka}{[GitHub]}}{}
+      {PowerBI, Airtable, Data Analytics}{}
+      \resumeItemListStart
+        \resumeItem{Built a \textbf{PowerBI dashboard} for police supervision, optimizing resource management and crime tracking.}
+        \resumeItem{Automated data updates with Airtable, reducing manual entry by 80\% and enabling 5-minute decision cycles.}
+        \resumeItem{Ranked \textbf{2nd out of 900 teams}.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Trading LLM Chatbot \linkblue{https://devpost.com/software/financial-risk-copilot}{[Link]}}{}
+      {Llama-3.1-70B, SambaNova, Next.js}{}
+      \resumeItemListStart
+        \resumeItem{Developed an advanced trading platform with AI-powered insights using \textbf{Meta-Llama-3.1-70B}.}
+        \resumeItem{Features include real-time market analysis, technical indicators, and risk assessment.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+\vspace{-5pt}
+
+%-----------POSITIONS OF RESPONSIBILITY-----------
+\section{Positions of Responsibility}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Corporate Executive, IIT Madras (Paradox'23)}{}{}{}
+      \resumeItemListStart
+        \resumeItem{Secured \textbf{₹5 Lakhs in sponsorships} while organizing 18 successful hackathons.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Design Head, Departmental Newsletter}{}{}{}
+      \resumeItemListStart
+        \resumeItem{Led a creative team in crafting compelling visual narratives for the departmental newsletter.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-5pt}
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+  \resumeSubHeadingListStart
+    \resumeItemWithTitle{Hackathons}{\textbf{Winner} - Product Space GenAI Hackathon; \textbf{1st Runner-up} - Hack2skill Karnataka State Police Datathon 24.}
+    \resumeItemWithTitle{Participation}{Participated in \textbf{100+ hackathons}, consistently delivering innovative solutions.}
+    \resumeItemWithTitle{Sponsorship}{Secured ₹5 Lakhs in sponsorships for Paradox'23 at IIT Madras.}
+  \resumeSubHeadingListEnd
+
+\end{document}
