@@ -61,6 +61,78 @@ export default function Honors() {
 
   const honors = [
     {
+      title: "Finalist - Google DeepMind Hackathon",
+      organization: "Google DeepMind",
+      date: "2026",
+      type: "🧠 National Finalist",
+      icon: "🏆",
+      image: "/honors/google-deepmind-hackathon.png",
+      gallery: [
+        "/honors/google-deepmind-1.png",
+        "/honors/google-deepmind-2.png",
+        "/honors/google-deepmind-3.png",
+      ],
+      description: "Selected as a finalist in the Google DeepMind Hackathon, competing at the national level to build cutting-edge AI solutions powered by DeepMind technologies.",
+      detailedDescription: "The Google DeepMind Hackathon brought together top AI/ML talent from across the country to tackle real-world challenges using state-of-the-art DeepMind technologies. As a finalist, our team demonstrated proficiency in building advanced AI systems, leveraging large language models, and deploying intelligent solutions. The hackathon tested our ability to innovate under pressure and deliver impactful AI-driven products.",
+      skills: ["AI/ML", "Deep Learning", "LLM", "DeepMind", "Innovation"],
+      color: "from-purple-500/20 to-indigo-500/20",
+      borderColor: "border-purple-500/50",
+      achievements: [
+        "Selected as finalist at national-level Google DeepMind Hackathon",
+        "Built advanced AI solution using DeepMind technologies",
+        "Competed against top AI/ML teams across the country",
+        "Demonstrated cutting-edge skills in LLMs and AI systems",
+      ],
+    },
+    {
+      title: "Abstract Presenter - 11th Indian Control Conference (ICC-11) at IISc Bengaluru",
+      organization: "Control Society (India) × IISc Bengaluru",
+      date: "Dec 2025",
+      type: "📄 Research Presentation",
+      icon: "🎓",
+      image: "/honors/iisc-icc11.png",
+      gallery: [
+        "/honors/iisc-icc11-1.png",
+        "/honors/iisc-icc11-2.png",
+        "/honors/iisc-icc11-3.png",
+      ],
+      description: "Presented research paper 'Soft Actor–Critic Based Adaptive PID Control for Energy-Efficient Legged Robot Locomotion' at the 11th Indian Control Conference at IISc Bengaluru.",
+      detailedDescription: "As a third-year B.Tech student, presented research at the 11th Indian Control Conference (ICC 2025) held at the Indian Institute of Science (IISc), Bengaluru. Our work, 'Soft Actor–Critic Based Adaptive PID Control for Energy-Efficient Legged Robot Locomotion,' explores how reinforcement learning-driven adaptive control can enhance stability and energy efficiency in legged robotic systems under practical constraints. The experience provided invaluable exposure to leading researchers, insightful technical discussions, and real-world research challenges in control systems and robotics.",
+      skills: ["Reinforcement Learning", "Control Systems", "Robotics", "Research", "PID Control"],
+      color: "from-emerald-500/20 to-teal-500/20",
+      borderColor: "border-emerald-500/50",
+      achievements: [
+        "Presented research paper at prestigious national-level conference at IISc",
+        "Published work on RL-based adaptive PID control for legged robots",
+        "Engaged with leading researchers and industry professionals",
+        "Represented IEEE RAS, Silchar Subsection at a national platform",
+      ],
+    },
+    {
+      title: "6th Position - KDSH 2026 (IIT Kharagpur)",
+      organization: "Kharagpur Data Analytics Group, IIT KGP",
+      date: "Jan 2026",
+      type: "🏅 Top Performer",
+      icon: "📊",
+      image: "/honors/kdsh-2026.png",
+      gallery: [
+        "/honors/kdsh-2026-1.png",
+        "/honors/kdsh-2026-2.png",
+        "/honors/kdsh-2026-3.png",
+      ],
+      description: "Secured 6th position in KDSH 2026, a prestigious data science hackathon organized by the Kharagpur Data Analytics Group at IIT Kharagpur.",
+      detailedDescription: "KDSH 2026, organized by the Kharagpur Data Analytics Group at IIT Kharagpur, is one of India's premier data science competitions. Competing against teams from top institutions, our team secured the 6th position by demonstrating strong analytical skills, innovative machine learning approaches, and data-driven problem-solving. The competition tested our ability to extract insights from complex datasets and build high-performance predictive models under time constraints.",
+      skills: ["Data Science", "Machine Learning", "Data Analytics", "Python", "Statistical Modeling"],
+      color: "from-cyan-500/20 to-blue-500/20",
+      borderColor: "border-cyan-500/50",
+      achievements: [
+        "Secured 6th position among top teams from premier institutions",
+        "Demonstrated advanced data science and ML skills",
+        "Built high-performance predictive models under time constraints",
+        "Competed in IIT Kharagpur's flagship data science hackathon",
+      ],
+    },
+    {
       title: "Winner - Neurathon 2025",
       organization: "Machine Learning Club, NIT Silchar",
       date: "Mar 2025",
@@ -405,11 +477,11 @@ export default function Honors() {
       {/* Achievement Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-gray-700">
         <div className="text-center">
-          <div className="text-3xl md:text-4xl font-bold text-AAsecondary mb-2">4+</div>
+          <div className="text-3xl md:text-4xl font-bold text-AAsecondary mb-2">7+</div>
           <div className="text-sm text-gray-400">Major Awards</div>
         </div>
         <div className="text-center">
-          <div className="text-3xl md:text-4xl font-bold text-AAsecondary mb-2">2</div>
+          <div className="text-3xl md:text-4xl font-bold text-AAsecondary mb-2">3</div>
           <div className="text-sm text-gray-400">National Finals</div>
         </div>
         <div className="text-center">
@@ -417,8 +489,8 @@ export default function Honors() {
           <div className="text-sm text-gray-400">Amazon HackOn</div>
         </div>
         <div className="text-center">
-          <div className="text-3xl md:text-4xl font-bold text-AAsecondary mb-2">2</div>
-          <div className="text-sm text-gray-400">1st Positions</div>
+          <div className="text-3xl md:text-4xl font-bold text-AAsecondary mb-2">1</div>
+          <div className="text-sm text-gray-400">Research Paper at IISc</div>
         </div>
       </div>
     </div>

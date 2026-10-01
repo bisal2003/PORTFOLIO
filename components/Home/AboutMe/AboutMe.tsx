@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function AboutMe() {
   const technologies = [
     ["C++", "Python", "Verilog", "JavaScript", "MongoDB"],
-    ["TensorFlow/PyTorch", "React.js/Node.js", "AWS/Google Cloud", "Docker", "OpenCV"],
+    ["TensorFlow/PyTorch", "React.js/Node.js", "AWS/Google Cloud", "LLMs/Agentic AI", "OpenCV"],
   ];
 
   return (
@@ -25,28 +25,33 @@ export default function AboutMe() {
               Hello! My name is Bisal, and I&apos;m a passionate{" "}
               <span className="text-[#64ffda]">Electronics and Communication Engineering student</span> at{" "}
               <span className="text-[#64ffda]">NIT Silchar</span> with a strong focus on AI/ML and software development.
-              My journey began with a fascination for how machines can learn and make intelligent decisions,
-              which led me to dive deep into{" "}
-              <span className="text-[#64ffda]">Machine Learning, Deep Learning, and Computer Vision</span>.
+              Most recently, I interned at{" "}
+              <span className="text-[#64ffda]">Optum (UnitedHealth Group)</span> as a TDP Intern, where I contributed
+              to the development of Healthcare Provider Database systems using{" "}
+              <span className="text-[#64ffda]">Agentic AI frameworks and Large Language Models</span>.
             </p>
             
             <p className="text-lg">
-              Beyond academics, I&apos;m an avid hackathon participant and winner, having built innovative solutions
-              like an{" "}
-              <span className="text-[#64ffda]">AI bulk calling agent</span> (Neurathon Winner), and led teams to
-              become{" "}
-              <span className="text-[#64ffda]">finalists in Google Cloud Agentic AI Day</span> (Top 50 in India) and{" "}
-              <span className="text-[#64ffda]">Amazon HackOn Season 5</span> (Top 130 teams). My research internship
+              I&apos;ve presented research at the{" "}
+              <span className="text-[#64ffda]">11th Indian Control Conference (ICC-11) at IISc Bengaluru</span>,
+              on Soft Actor–Critic Based Adaptive PID Control for legged robot locomotion. I&apos;m a{" "}
+              <span className="text-[#64ffda]">Google DeepMind Hackathon Finalist</span>, secured{" "}
+              <span className="text-[#64ffda]">6th position at KDSH 2026 (IIT KGP)</span>, and have been a finalist
+              at{" "}
+              <span className="text-[#64ffda]">Google Cloud Agentic AI Day</span> (Top 50) and{" "}
+              <span className="text-[#64ffda]">Amazon HackOn Season 5</span> (Top 130/50,000+). My research internship
               involved working with{" "}
               <span className="text-[#64ffda]">122-channel EEG data</span> for Brain-Computer Interfaces,
               achieving 90%+ classification accuracy.
             </p>
 
             <p className="text-lg mb-8">
-              I believe in creating technology that solves real-world problems. With a{" "}
-              <span className="text-[#64ffda]">9.0 CGPA</span> and hands-on experience in both research and
-              industry, I&apos;m constantly exploring the intersection of AI, hardware, and software.
-              Here are some of the technologies I&apos;ve been working with:
+              Certified as an{" "}
+              <span className="text-[#64ffda]">Oracle Agentic AI Foundations Associate</span> and{" "}
+              <span className="text-[#64ffda]">Scaler Forward Deployed Engineer</span>, I&apos;m constantly
+              exploring the intersection of AI, hardware, and software. With a{" "}
+              <span className="text-[#64ffda]">9.0 CGPA</span> and hands-on industry experience, here are some
+              of the technologies I&apos;ve been working with:
             </p>
 
             {/* Technologies Grid */}

@@ -52,16 +52,16 @@ export default function MyName(props: { finishedLoading: boolean }) {
         className="text-gray-400 font-Header text-sm md:text-lg sm:text-md mt-10 tracking-wider"
       >
         I&apos;m an <span className="text-AAsecondary">ECE undergraduate at NIT Silchar</span> with a passion for{" "}
-        <span className="text-AAsecondary">AI/ML and software development</span>. With expertise in{" "}
-        <span className="text-AAsecondary">Deep Learning, NLP, and Computer Vision</span>, I specialize in creating innovative solutions
-        <br className="3xl:block hidden" /> from <span className="text-AAsecondary">Brain-Computer Interfaces</span> to{" "}
-        <span className="text-AAsecondary">full-stack applications</span>. As a{" "}
-        <span className="text-AAsecondary">hackathon winner</span> and{" "}
-        <span className="text-AAsecondary">research intern</span>,
-        <br className="3xl:block hidden" /> I&apos;ve built AI-powered calling agents, agentic systems for farmers, and sustainable e-commerce platforms.
-        <br className="3xl:block hidden" /> My journey spans from <span className="text-AAsecondary">EEG signal processing</span> to{" "}
-        <span className="text-AAsecondary">cloud-native architectures</span>, always driven by the goal of creating technology
-        <br className="3xl:block hidden" /> that makes a real-world impact. I thrive on solving complex problems and turning innovative ideas into reality.
+        <span className="text-AAsecondary">AI/ML and software development</span>. Recently interned at{" "}
+        <span className="text-AAsecondary">Optum (UnitedHealth Group)</span> as a TDP Intern, building healthcare AI systems with LLMs.{" "}
+        I&apos;ve presented research at <span className="text-AAsecondary">IISc Bengaluru (ICC-11)</span> on RL-based adaptive control for legged robots,
+        <br className="3xl:block hidden" /> secured <span className="text-AAsecondary">6th position at KDSH 2026 (IIT KGP)</span>, and am a{" "}
+        <span className="text-AAsecondary">Google DeepMind Hackathon Finalist</span>.{" "}
+        Certified as an <span className="text-AAsecondary">Oracle Agentic AI Foundations Associate</span> and{" "}
+        <span className="text-AAsecondary">Scaler FDE</span>,
+        <br className="3xl:block hidden" /> I specialize in building intelligent systems from{" "}
+        <span className="text-AAsecondary">Brain-Computer Interfaces</span> to{" "}
+        <span className="text-AAsecondary">Agentic AI platforms</span> — always driven by real-world impact.
       </motion.h3>
       <motion.div
         initial={{ y: 10, opacity: 0 }}

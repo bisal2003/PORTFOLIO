@@ -62,6 +62,78 @@ export default function Certificates() {
 
   const certificates = [
     {
+      title: "Forward Deployed Engineer Certification",
+      organization: "Scaler",
+      issued: "Sep 2026",
+      credentialId: "",
+      image: "/certificates/fde-scaler.png",
+      skills: ["Artificial Intelligence (AI)", "FDE", "AI Deployment", "MLOps", "System Design"],
+      description: "Hands-on masterclass focused on building and deploying AI solutions using the Forward Deployed Engineer (FDE) approach. Covered end-to-end AI system design, deployment strategies, and real-world problem-solving.",
+    },
+    {
+      title: "Oracle Certified Foundations Associate - Agentic AI",
+      organization: "Oracle",
+      issued: "Jul 2026",
+      credentialId: "329806142AAI26OFA",
+      image: "/certificates/oracle-agentic-ai.png",
+      skills: ["Agentic AI Development", "Large Language Models (LLM)", "Prompt Engineering", "AI Agents", "Automation", "Oracle Cloud"],
+      description: "Earned the Oracle Certified Foundations Associate – Agentic AI certification from Oracle University. Strengthened understanding of AI agents, large language models, prompt engineering, and the fundamentals of building agentic AI systems.",
+    },
+    {
+      title: "AWS AI Practitioner Challenge",
+      organization: "Udacity",
+      issued: "May 2026",
+      credentialId: "1505079e-2e47-11f1-bafa-43e8aa3cf806",
+      image: "/certificates/aws-ai-practitioner.png",
+      skills: ["Artificial Intelligence (AI)", "Generative AI", "Machine Learning", "AWS"],
+      description: "Successfully completed the AWS AI Practitioner Challenge offered through Udacity. Gained foundational knowledge of Artificial Intelligence, Generative AI concepts, machine learning workflows, cloud-based AI services, and practical applications of AI technologies.",
+    },
+    {
+      title: "S.O.L.I.D Principles Every Developer Must Know – Scaler Masterclass",
+      organization: "Scaler",
+      issued: "Mar 2026",
+      credentialId: "",
+      image: "/certificates/solid-scaler.png",
+      skills: ["SOLID Design Principles", "Object-Oriented Programming (OOP)", "Clean Code", "Software Architecture", "Design Patterns", "System Design"],
+      description: "Earned this certificate after attending the Scaler Masterclass on S.O.L.I.D Principles, focusing on best practices in object-oriented design, clean code, and maintainable software architecture. The session emphasized building scalable and robust applications using the five SOLID principles.",
+    },
+    {
+      title: "Artificial Intelligence for Societal Applications (AISA-2026) - FDP",
+      organization: "National Institute of Technology Silchar",
+      issued: "Mar 2026",
+      credentialId: "",
+      image: "/certificates/Bisal_Prasad_FDP.pdf",
+      skills: ["Artificial Intelligence (AI)", "Explainable AI", "Deep Learning", "CNNs", "Federated Learning"],
+      description: "Completed a Faculty Development Program on Artificial Intelligence for Societal Applications (AISA-2026) organized by the Department of ECE, NIT Silchar. Covered deep learning architectures, CNNs, RNNs, GANs, federated learning, explainable AI, and real-world societal applications.",
+    },
+    {
+      title: "KDSH 2026 – 6th Position",
+      organization: "Kharagpur Data Analytics Group, IIT KGP",
+      issued: "Jan 2026",
+      credentialId: "",
+      image: "/certificates/Bisal Prasad KDSH.pdf",
+      skills: ["Data Science", "Machine Learning", "Data Analytics"],
+      description: "Secured 6th position in KDSH 2026 organized by Kharagpur Data Analytics Group at IIT Kharagpur, demonstrating strong analytical and machine learning skills in a competitive data science hackathon.",
+    },
+    {
+      title: "Research Internship – Machine Learning",
+      organization: "HOD, ECE Department, NIT Silchar",
+      issued: "Jul 2025",
+      credentialId: "",
+      image: "/certificates/Bisal_internship .pdf",
+      skills: ["Core ML", "Research Skills", "Deep Learning", "Signal Processing", "BCI"],
+      description: "Completed a Machine Learning Research Internship at the ECE Department, NIT Silchar, working on advanced BCI signal processing and deep learning techniques for neural decoding applications.",
+    },
+    {
+      title: "11th Indian Control Conference (ICC-11) – Abstract Presenter",
+      organization: "Control Society (India)",
+      issued: "Dec 2025",
+      credentialId: "",
+      image: "/certificates/Mr. Bisal Prasad ICC11 receipt.pdf",
+      skills: ["Research Skills", "Core ML", "Control Systems", "Reinforcement Learning"],
+      description: "Participated and presented an abstract at the 11th Indian Control Conference (ICC-11) held at the Indian Institute of Science (IISc), Bengaluru. Presented work on 'Soft Actor–Critic Based Adaptive PID Control for Energy-Efficient Legged Robot Locomotion.'",
+    },
+    {
       title: "Oracle Cloud Infrastructure 2025 Certified Data Science Professional",
       organization: "Oracle",
       issued: "Oct 2025",
@@ -252,9 +324,9 @@ export default function Certificates() {
                 <h3 className="text-gray-200 font-bold text-lg leading-tight line-clamp-2 group-hover:text-AAsecondary transition-colors">
                   {cert.title}
                 </h3>
-                
+
                 <p className="text-gray-400 text-sm font-medium">{cert.organization}</p>
-                
+
                 <div className="flex items-center justify-between text-xs text-gray-500">
                   <span>Issued: {cert.issued}</span>
                 </div>

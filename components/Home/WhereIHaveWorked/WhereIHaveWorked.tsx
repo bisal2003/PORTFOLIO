@@ -2,10 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function WhereIHaveWorked() {
-  const [descriptionJob, setDescriptionJob] = React.useState("NIT Silchar");
+  const [descriptionJob, setDescriptionJob] = React.useState("Optum");
   
   const GetDescription = () => {
     switch (descriptionJob) {
+      case "Optum":
+        return <OptumDesc />;
       case "NIT Silchar":
         return <NITSilcharDesc />;
       case "Academor":
@@ -15,7 +17,7 @@ export default function WhereIHaveWorked() {
       case "Finance Club":
         return <FinanceClubDesc />;
       default:
-        return <NITSilcharDesc />;
+        return <OptumDesc />;
     }
   };
 
@@ -41,7 +43,7 @@ const CompaniesBar = ({ setDescriptionJob }) => {
   const [barPosition, setBarPosition] = React.useState(-8);
   const [barAbovePosition, setBarAbovePosition] = React.useState(0);
   const [companyNameBackgroundColorGreen, setCompanyNameBackgroundColorGreen] = React.useState([
-    true, false, false, false
+    true, false, false, false, false
   ]);
 
   const CompanyButton = ({ 
@@ -69,7 +71,7 @@ const CompaniesBar = ({ setDescriptionJob }) => {
 
   return (
     <div className="flex flex-col md:flex-row w-screen lg:w-auto overflow-auto scrollbar-hide md:overflow-hidden pb-4 md:pb-0 justify-start sm:justify-center items-start sm:items-center">
-      <div className="hidden md:block bg-gray-500 relative h-0.5 w-34 md:h-[352px] translate-y-1 md:w-0.5 rounded md:order-1 order-2">
+      <div className="hidden md:block bg-gray-500 relative h-0.5 w-34 md:h-[400px] translate-y-1 md:w-0.5 rounded md:order-1 order-2">
         <motion.div
           animate={{ y: barPosition }}
           className="absolute w-10 h-0.5 md:w-0.5 md:h-12 rounded bg-AAsecondary"
@@ -80,35 +82,43 @@ const CompaniesBar = ({ setDescriptionJob }) => {
         <div className="flex flex-row md:flex-col">
           <CompanyButton
             buttonIndex={0}
-            companyName="NIT Silchar"
+            companyName="Optum"
             barPosition={-10}
             barAbovePosition={1}
-            descriptionJob="NIT Silchar"
-            newColorState={[true, false, false, false]}
+            descriptionJob="Optum"
+            newColorState={[true, false, false, false, false]}
           />
           <CompanyButton
             buttonIndex={1}
-            companyName="Academor Edtech"
+            companyName="NIT Silchar"
             barPosition={40}
             barAbovePosition={129}
-            descriptionJob="Academor"
-            newColorState={[false, true, false, false]}
+            descriptionJob="NIT Silchar"
+            newColorState={[false, true, false, false, false]}
           />
           <CompanyButton
             buttonIndex={2}
-            companyName="IEEE RAS"
+            companyName="Academor Edtech"
             barPosition={83}
             barAbovePosition={257}
-            descriptionJob="IEEE RAS"
-            newColorState={[false, false, true, false]}
+            descriptionJob="Academor"
+            newColorState={[false, false, true, false, false]}
           />
           <CompanyButton
             buttonIndex={3}
-            companyName="Finance Club"
+            companyName="IEEE RAS"
             barPosition={126}
             barAbovePosition={385}
+            descriptionJob="IEEE RAS"
+            newColorState={[false, false, false, true, false]}
+          />
+          <CompanyButton
+            buttonIndex={4}
+            companyName="Finance Club"
+            barPosition={169}
+            barAbovePosition={513}
             descriptionJob="Finance Club"
-            newColorState={[false, false, false, true]}
+            newColorState={[false, false, false, false, true]}
           />
         </div>
         <div className="block md:hidden h-0.5 rounded bg-gray-500">
@@ -175,10 +185,15 @@ const AcademorDesc = () => (
 const IEEERASDesc = () => (
   <div className="flex-col space-y-5 max-w-xl px-4 md:px-0">
     <div className="flex flex-col space-y-2">
-      <span className="text-gray-100 text-xl font-bold">General Secretary and Team Lead</span>
-      <span className="text-AAsecondary">Apr 2025 - Present</span>
+      <span className="text-gray-100 text-xl font-bold">Vice Chair</span>
+      <span className="text-AAsecondary">Feb 2026 - Present</span>
+      <span className="text-gray-500 text-sm">Previously: Technical Team Member (Apr 2025 - Jul 2026)</span>
     </div>
     <div className="flex flex-col space-y-4 text-gray-400">
+      <div className="flex flex-row space-x-2">
+        <span className="text-AAsecondary">▹</span>
+        <span>Leading the <span className="text-AAsecondary">IEEE Robotics & Automation Society, Silchar Subsection</span> as Vice Chair, driving team leadership and strategic programming initiatives.</span>
+      </div>
       <div className="flex flex-row space-x-2">
         <span className="text-AAsecondary">▹</span>
         <span>Organized expert talks attended by <span className="text-AAsecondary">500+ students</span> to promote interest in robotics and automation.</span>
@@ -195,11 +210,34 @@ const IEEERASDesc = () => (
   </div>
 );
 
+const OptumDesc = () => (
+  <div className="flex-col space-y-5 max-w-xl px-4 md:px-0">
+    <div className="flex flex-col space-y-2">
+      <span className="text-gray-100 text-xl font-bold">TDP Intern</span>
+      <span className="text-AAsecondary">Jun 2026 - Aug 2026</span>
+    </div>
+    <div className="flex flex-col space-y-4 text-gray-400">
+      <div className="flex flex-row space-x-2">
+        <span className="text-AAsecondary">▹</span>
+        <span>Contributed to the development and optimization of the <span className="text-AAsecondary">Healthcare Provider Database systems</span>, leveraging Agentic AI frameworks and Large Language Models (LLM) to streamline data processing workflows.</span>
+      </div>
+      <div className="flex flex-row space-x-2">
+        <span className="text-AAsecondary">▹</span>
+        <span>Worked with <span className="text-AAsecondary">Data Science, Software Architecture</span>, and enterprise-scale backend systems.</span>
+      </div>
+      <div className="flex flex-row space-x-2">
+        <span className="text-AAsecondary">▹</span>
+        <span>Applied <span className="text-AAsecondary">Agentic AI and LLM-based</span> approaches to automate and improve healthcare data pipelines.</span>
+      </div>
+    </div>
+  </div>
+);
+
 const FinanceClubDesc = () => (
   <div className="flex-col space-y-5 max-w-xl px-4 md:px-0">
     <div className="flex flex-col space-y-2">
-      <span className="text-gray-100 text-xl font-bold">Senior Fundamental Analyst</span>
-      <span className="text-AAsecondary">May 2024 - Present</span>
+      <span className="text-gray-100 text-xl font-bold">Fundamental Analyst</span>
+      <span className="text-AAsecondary">Oct 2024 - Apr 2025</span>
     </div>
     <div className="flex flex-col space-y-4 text-gray-400">
       <div className="flex flex-row space-x-2">
